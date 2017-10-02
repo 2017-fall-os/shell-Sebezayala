@@ -14,7 +14,7 @@ tokens in a vector and returns it */
     pStrLimit = str + len;
     for (pStr = str; pStr != pStrLimit; pStr++) {
         currChar=*pStr;
-        if(currChar == delim || currChar == '\n' || currChar == '\0'){
+        if(currChar == delim  || currChar == '\0'){
             if(lastChar != delim){//Only count non empty strings as tokens
                 nTokens++;
             }
@@ -26,7 +26,7 @@ tokens in a vector and returns it */
     //Count the number of characters in each token and allocate the necesary memory
     for (pStr = str; pStr != pStrLimit; pStr++) {
         currChar=*pStr;
-        if(currChar != delim && currChar != '\n' && currChar != '\0'){
+        if(currChar != delim  && currChar != '\0'){
           nChars++;
         }else{
             if(nChars != 0 ){//Again we only count non empty strings as tokens
@@ -41,7 +41,7 @@ tokens in a vector and returns it */
     tokNum=0;
     for (pStr = str; pStr != pStrLimit; pStr++) {
         currChar=*pStr;
-        if(currChar != delim && currChar != '\n' && currChar != '\0'){
+        if(currChar != delim  && currChar != '\0'){
           tokenVec[tokNum][nChars]=currChar;
           nChars++;
         }else{

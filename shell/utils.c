@@ -51,7 +51,7 @@ int startsWith(char *origStr, char *word){
 void remvChrsfromLeft(int num, char *str){
     int leng = strLength(str);
     if(num>leng){
-        return 0;
+        return;
     }
     int i=0;
     for (i=0;i<leng-num;i++){
@@ -63,7 +63,7 @@ void remvChrsfromLeft(int num, char *str){
     }
 }
 
-//Function that concatenates two strings placing a '/' character betwen them.
+//Function that concatenates two strings
 char *strConcat(char *first, char *second){
     int lenFir = strLength(first);
     int lenSec = strLength(second);
@@ -72,9 +72,19 @@ char *strConcat(char *first, char *second){
     final=pFinal=(char *)malloc(lenFir+lenSec);
     for(pStr = first;*pStr;pStr++)
         *(pFinal++) = *pStr;
-    *(pFinal++) = '/';
     for(pStr = second;*pStr;pStr++)
         *(pFinal++) = *pStr;
     *pFinal=0;
     return final;
+}
+
+//Function that returns the number of times char c appears in string str
+int containChar(char *str, char c){
+    int count=0;
+    for(int i=0;i<strLength(str);i++){
+        if (str[i]==c){
+            count++;
+        }
+    }
+    return count;
 }

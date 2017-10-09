@@ -14,8 +14,8 @@ rm -f testLog.txt
 
 chkcmd () {
     echo "Testing $2" 
+    echo -e "$1" | $myShell > /tmp/t2 
     echo -e "$1" | bash > /tmp/t1
-    echo -e "$1" | $myShell > /tmp/t2
     if diff /tmp/t1 /tmp/t2 ; then
 	result=PASSED
     else
@@ -41,7 +41,7 @@ chkcmd 'cd .. \n pwd' "change dir"
 echo -e "\n\nResults"
 cat testLog.txt
 
-rm /tmp/c1 /tmp/t1 /tmp/t2
+rm /tmp/c1 /tmp/t1 /tmp/t2 /tmp/x
 
 
 

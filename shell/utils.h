@@ -8,5 +8,6 @@ int startsWith(char *origStr, char *word);
 char *strcopy(char *inStr);
 void remvChrsfromLeft(int num,char *str);
 char *strConcat(char *first, char *second);
+int containChar(char *str, char c);
 
 #endif

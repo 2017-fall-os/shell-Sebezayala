@@ -1,8 +1,6 @@
 #ifndef ShellFunctionsIncluded		/* prevent multiple inclusion */
 #define ShellFunctionsIncluded 
-
-void pipesHandler(int numOfPipes,char **pipeVec,char **envp,char **pathVec);
-void normalHandler(char *buf, char**envp,char**pathVec);
-void bgroundHandler(char**bgrndVec,char**envp,char**pathVec);
-
+int execute(char**commandVec,char**envp,char**pathVec);
+char *getVar(char **envp, char*name);
+int setVar(char **envp, char *name,char *str);
 #endif

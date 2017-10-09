@@ -1,4 +1,5 @@
 #include <stdlib.h>/* For malloc/calloc */
+#include <stdio.h>
 #include "utils.h"/* For strLength */
 
 /*Tokenizer function that separates a given string using a given delimiter, stores the 
@@ -30,7 +31,7 @@ tokens in a vector and returns it */
           nChars++;
         }else{
             if(nChars != 0 ){//Again we only count non empty strings as tokens
-                tokenVec[tokNum] = (char *)malloc(nChars+1);
+                tokenVec[tokNum] = (char *)calloc(nChars+1,sizeof(char));
                 tokNum++;
                 nChars=0;
             }
@@ -46,7 +47,7 @@ tokens in a vector and returns it */
           nChars++;
         }else{
             if(nChars != 0 ){//Terminate each token with a 0 character
-                tokenVec[tokNum][nChars+1]=0;
+                tokenVec[tokNum][nChars+1]='\0';
                 tokNum++;
                 nChars=0;
             }

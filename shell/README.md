@@ -1,7 +1,7 @@
 ## Sebastian Ayala Urtaza
 ## Simple Unix Shell
 
-Shell version 2.0
+Shell version 2.1
 
 This shell supports the use of :
 - Simple commands (e.g. $/bin/ls or $ ls)
@@ -10,6 +10,7 @@ This shell supports the use of :
 - cd command to change directories (e.g. cd ..)
 - Redirection of input and output (e.g. $ ls > /tmp/files.txt), however it does not support multiple redirection (e.g.$ ls > /tmp/files.txt > /tmp/files2.txt)
 - Use of the PS1 environmental variable if exported beforehand
+- setting enviroment variables: "var=Value"
 
 Passes all the tests of testShell.sh
 

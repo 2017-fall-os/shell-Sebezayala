@@ -89,6 +89,20 @@ void normalHandler(char *buf, char**envp,char**pathVec,int isBground){
                     return;
             }
         }
+        /*Environment Variable Setter*/
+        if(containChar(commandVec[0],'=')){//Check if the command fits the "var=value" structure
+            char **varVec=mytoc(commandVec[0],'=');
+            char *value=varVec[1];
+            for(int i=2;varVec[i];i++){
+                value=strConcat(value,"=");
+                value=strConcat(value,varVec[i]);
+            }
+            if(!setVar(envp,varVec[0],value)){//Set the variable.
+                fprintf(stderr,"Unable to find specifed variable\n");
+            }
+            return;
+        }
+        /*Normal Procedure*/
         pid =fork();
         if (pid < 0) {
             // fork failed; exit
